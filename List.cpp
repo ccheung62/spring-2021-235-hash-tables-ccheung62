@@ -15,7 +15,15 @@ void List::insert(std::string data){
   // insert the new node
   new_node->setNext(head);
   head=new_node;
+}
+
+bool List::containData(std::string data){
+  Node *walker = head;
+  while (walker!= nullptr && walker->getData() != data){
+    walker = walker->getNext();
   }
+  return walker != nullptr;
+}
 
 
 std::string List::toString(){

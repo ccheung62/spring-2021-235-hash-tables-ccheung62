@@ -1,10 +1,10 @@
 * Fall 2021 235 Hash Tables
 
-* Last name:
+* Last name:Cheung
 
-* First name:
+* First name:Cheuk Lam
 
-* GitHub username:
+* GitHub username:ccheung62
 
 * Notes:
 
@@ -73,3 +73,11 @@ Write up what you discover w/r to hash table size and hash functions
 in the section below and push to GitHub.
 
 * Has Table Experiments Results
+- When the size of the hash table is set to 0, `Floating point exception: 8` will pop up
+- The hash functions was able to spread inserted strings relatively evenly
+- When the size of the hash table is the same as the number of inserts, the strings spread evenly with most lists having more than one node  
+- When the size of the hash table is 100000, there are big gaps in the hash table 
+  - the array was empty from 128 to 1515 in one run
+- For the hash function using ASCII summation, special characters could result in a negative numbers after modding it by the size of the hash table
+  - 衛 after the hash function was -20
+  - the String Folding hash function was able to hash the string correctly

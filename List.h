@@ -9,6 +9,7 @@ class List{
  public:
   List();
   void insert(std::string data);
+  bool containData(std::string data);
   std::string toString();
   
 };
