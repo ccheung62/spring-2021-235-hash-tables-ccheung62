@@ -3,9 +3,9 @@
 #include <cmath>
 
 HTable::HTable(){
-    *hashTable = new List[100000];
+    *hashTable = new List[100];
     hashTable[0] = nullptr;
-    size = 100000;
+    size = 100;
 }
 
 HTable::HTable(int s){
@@ -17,17 +17,11 @@ HTable::HTable(int s){
 // taken from https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/HashFuncExamp.html (10.3.2)
 // sums the ASCII values of the letters in a string and module it by the size
 int HTable::hash(std::string str){
-    // int sum = 0;
-    // for (int i=0; i < str.length(); i++){
-    //     sum += str[i];
-    // }
-    // return sum % size;
-    long sum = 0, mul = 1;
-    for (int i = 0; i < str.length(); i++) {
-        mul = (i % 4 == 0) ? 1 : mul * 256;
-        sum += str[i] * mul;
+    int sum = 0;
+    for (int i=0; i < str.length(); i++){
+        sum += str[i];
     }
-    return (int)(abs(sum) % size);
+    return sum % size;
 }
 
 void HTable::insert(std::string str){
